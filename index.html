@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RapiPapel | Tu Papelería de Confianza en CDMX</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="RapiPapel: Papelería escolar, de arte y oficina en la Ciudad de México. Múltiples sucursales en Roma Norte, Coyoacán, Polanco, Del Valle y más. Envíos express.">
+  <meta name="keywords" content="papelería cdmx, útiles escolares, artículos de oficina, material de arte, rapipapel, papeleria cerca de mi">
+  <meta name="theme-color" content="#FF2E93">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #2B2D42;
+      --primary-light: #3D405B;
+      --accent-pink: #FF2E93;
+      --accent-pink-hover: #E01E7B;
+      --accent-yellow: #FFD166;
+      --accent-cyan: #06D6A0;
+      --bg-light: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --text-main: #1D2A44;
+      --text-muted: #5C677D;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --shadow-pink: 0 8px 20px rgba(255, 46, 147, 0.35);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .brand-name {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Layout Utility */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      outline: none;
+    }
+
+    .btn-pink {
+      background-color: var(--accent-pink);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-pink);
+    }
+
+    .btn-pink:hover {
+      background-color: var(--accent-pink-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(255, 46, 147, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Announcement Top Bar */
+    .top-bar {
+      background: linear-gradient(90deg, #1D2A44 0%, #3D405B 100%);
+      color: #FFF;
+      font-size: 0.875rem;
+      padding: 8px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+    .top-bar span {
+      background: var(--accent-pink);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    /* Header */
+    .header {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent-pink), #FF7B00);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.5rem;
+      transform: rotate(-3deg);
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name span {
+      color: var(--accent-pink);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-pink);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--accent-pink);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: #F0F4F8;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--primary);
+    }
+
+    .cart-btn:hover {
+      background: #E2E8F0;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--accent-pink);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 80px 0 100px;
+      background: linear-gradient(135deg, #FFF6FB 0%, #F0F4FF 100%);
+      overflow: hidden;
+    }
+
+    .hero-shape-1 {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 46, 147, 0.12) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+    }
+
+    .hero-shape-2 {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 214, 160, 0.15) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      padding: 8px 18px;
+      border-radius: 99px;
+      box-shadow: var(--shadow-sm);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 24px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .hero-badge-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent-pink);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 46, 147, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 46, 147, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 46, 147, 0); }
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .stat-item h4 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Hero Visual Element */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-main-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .hero-img-placeholder {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #FFEEF6 0%, #E6F4FE 100%);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .floating-card {
+      position: absolute;
+      background: #FFFFFF;
+      padding: 16px 20px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .floating-card-1 {
+      top: 20px;
+      left: -20px;
+    }
+
+    .floating-card-2 {
+      bottom: 30px;
+      right: -20px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .floating-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    /* Locations Bar */
+    .locations-bar {
+      background: #FFFFFF;
+      padding: 30px;
+      border-bottom: 1px solid var(--border-color);
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
+
+    .locations-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .locations-tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .location-chip {
+      background: #F1F5F9;
+      color: var(--primary);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .location-chip:hover, .location-chip.active {
+      background: var(--primary);
+      color: #FFF;
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .section-subtitle {
+      color: var(--accent-pink);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.875rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(255, 46, 147, 0.2);
+    }
+
+    .feature-tag {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .tag-hot { background: #FFE5F1; color: var(--accent-pink); }
+    .tag-sale { background: #FFF3C4; color: #B7791F; }
+    .tag-new { background: #D1FADF; color: #027A48; }
+
+    .feature-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.8rem;
+    }
+
+    .bg-pink-light { background: #FFF0F6; color: var(--accent-pink); }
+    .bg-yellow-light { background: #FFF9E6; color: #D97706; }
+    .bg-cyan-light { background: #E6F9F4; color: #059669; }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .feature-items-list {
+      list-style: none;
+      margin-bottom: 28px;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 16px;
+    }
+
+    .feature-items-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .feature-items-list li::before {
+      content: '✓';
+      color: var(--accent-pink);
+      font-weight: 900;
+    }
+
+    .feature-card .btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 0.95rem;
+    }
+
+    /* CDMX Branches Section */
+    .cdmx-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, #151928 100%);
+      border-radius: 24px;
+      padding: 60px;
+      color: white;
+      margin: 40px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cdmx-banner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cdmx-banner h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cdmx-banner p {
+      color: #A0AEC0;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .branch-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .branch-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-pink);
+      transform: translateY(-2px);
+    }
+
+    .branch-card h4 {
+      font-size: 1.1rem;
+      color: var(--accent-yellow);
+      margin-bottom: 4px;
+    }
+
+    .branch-card p {
+      font-size: 0.85rem;
+      margin: 0;
+      color: #CBD5E1;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #0F172A;
+      color: #94A3B8;
+      padding: 80px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand h3 {
+      color: #FFF;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      max-width: 320px;
+    }
+
+    .footer-title {
+      color: #FFF;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-pink);
+    }
+
+    .newsletter-input-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .newsletter-input-group input {
+      padding: 12px 16px;
+      border-radius: 99px;
+      border: 1px solid #334155;
+      background: #1E293B;
+      color: white;
+      flex-grow: 1;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .newsletter-input-group input:focus {
+      border-color: var(--accent-pink);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1E293B;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    /* Modal System */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 40px;
+      border-radius: 24px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes modalPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-icon {
+      width: 70px;
+      height: 70px;
+      background: #FFF0F6;
+      color: var(--accent-pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 20px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-description {
+        margin: 0 auto 36px;
+      }
+      .hero-ctas {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .cdmx-banner-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+      .branches-grid {
+        grid-template-columns: 1fr;
+      }
+      .cdmx-banner {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span>¡CDMX!</span> Envíos gratis a todo el Valle de México en compras mayores a $499 MXN 🚀
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="brand">
+        <div class="brand-logo-icon">R</div>
+        <span class="brand-name">Rapi<span>Papel</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link">Inicio</a></li>
+          <li><a href="#sucursales" class="nav-link">Sucursales CDMX</a></li>
+          <li><a href="#caracteristicas" class="nav-link">Catálogo</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-btn" aria-label="Ver carrito" onclick="openModal('Tu Carrito RapiPapel', 'Tienes 2 productos en tu carrito listos para entrega inmediata en CDMX.')">
+          🛒
+          <span class="cart-badge" id="cart-count">2</span>
+        </button>
+
+        <a href="#caracteristicas" class="btn btn-pink" onclick="triggerBuyNow()">
+          Comprar Ahora
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-shape-1"></div>
+    <div class="hero-shape-2"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            ¡Más de 8 sucursales en CDMX!
+          </div>
+
+          <h1 class="hero-title">
+            Todo para tu escuela y oficina a la <span style="color: var(--accent-pink);">vuelta de la esquina</span>
+          </h1>
+
+          <p class="hero-description">
+            En <strong>RapiPapel</strong> combinamos la variedad de productos escolares, de arte y oficina más completa de la CDMX con entregas express e instalaciones cerca de ti.
+          </p>
+
+          <div class="hero-ctas">
+            <button class="btn btn-pink" onclick="triggerBuyNow()">
+              Comprar Ahora 🛍️
+            </button>
+            <a href="#sucursales" class="btn btn-outline">
+              Ver Sucursales 📍
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>+15k</h4>
+              <p>Productos en stock</p>
+            </div>
+            <div class="stat-item">
+              <h4>8+</h4>
+              <p>Tiendas en CDMX</p>
+            </div>
+            <div class="stat-item">
+              <h4>24h</h4>
+              <p>Envío express local</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-main-card">
+            <div class="hero-img-placeholder">
+              <div style="font-size: 5rem; margin-bottom: 10px;">🎒✏️📐</div>
+              <p style="font-weight: 800; color: var(--primary); font-size: 1.2rem;">Suministros De Alta Calidad</p>
+              <p style="color: var(--text-muted); font-size: 0.875rem;">Listos para entrega hoy mismo</p>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-1">
+            <div class="floating-icon bg-pink-light">🏷️</div>
+            <div>
+              <p style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">PROMO ESCOLAR</p>
+              <p style="font-size: 0.95rem; font-weight: 800; color: var(--primary);">20% de Descuento</p>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-2">
+            <div class="floating-icon bg-cyan-light">🚚</div>
+            <div>
+              <p style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">ENVÍO RÁPIDO</p>
+              <p style="font-size: 0.95rem; font-weight: 800; color: var(--primary);">CDMX y Áreas Múltiples</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sucursales Selector Strip -->
+  <div class="container" id="sucursales">
+    <div class="locations-bar">
+      <div class="locations-title">📍 Encuentra tu sucursal RapiPapel más cercana en CDMX:</div>
+      <div class="locations-tags">
+        <span class="location-chip active" onclick="selectLocation(this, 'Roma Norte')">📍 Roma Norte</span>
+        <span class="location-chip" onclick="selectLocation(this, 'Coyoacán')">📍 Coyoacán</span>
+        <span class="location-chip" onclick="selectLocation(this, 'Polanco')">📍 Polanco</span>
+        <span class="location-chip" onclick="selectLocation(this, 'Del Valle')">📍 Del Valle</span>
+        <span class="location-chip" onclick="selectLocation(this, 'Santa Fe')">📍 Santa Fe</span>
+        <span class="location-chip" onclick="selectLocation(this, 'Condesa')">📍 Condesa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="features-section" id="caracteristicas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Lo Destacado</span>
+        <h2 class="section-title">Explora Nuestras Colecciones Principales</h2>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Tarjeta 1: Los Más Comprados -->
+        <article class="feature-card">
+          <span class="feature-tag tag-hot">Populares</span>
+          <div class="feature-icon-wrapper bg-pink-light">
+            🔥
+          </div>
+          <h3>Los Más Comprados</h3>
+          <p>Los indispensables preferidos por estudiantes, creativos y oficinas de la CDMX.</p>
+          
+          <ul class="feature-items-list">
+            <li>Cuadernos Profesionales 100 Hojas</li>
+            <li>Bolígrafos en Gel Multicolor</li>
+            <li>Paquete Papel Bond 500 Hojas</li>
+            <li>Organizadores de Escritorio</li>
+          </ul>
+
+          <button class="btn btn-pink" onclick="addToCart('Colección Los Más Comprados')">
+            Ver Colección
+          </button>
+        </article>
+
+        <!-- Tarjeta 2: Ofertas y Descuentos -->
+        <article class="feature-card">
+          <span class="feature-tag tag-sale">Hasta 35% OFF</span>
+          <div class="feature-icon-wrapper bg-yellow-light">
+            ⚡
+          </div>
+          <h3>Ofertas y Descuentos</h3>
+          <p>Aprovecha precios especiales en paquetes escolares, arte y suministros de oficina.</p>
+          
+          <ul class="feature-items-list">
+            <li>Kits Escolares Completos (-30%)</li>
+            <li>Set de Plumones Punta Pincel</li>
+            <li>Calculadoras Científicas</li>
+            <li>Mochilas y Lapiceras Ergonómicas</li>
+          </ul>
+
+          <button class="btn btn-pink" onclick="addToCart('Colección Ofertas Especiales')">
+            Aprovechar Ofertas
+          </button>
+        </article>
+
+        <!-- Tarjeta 3: Novedades y Arte -->
+        <article class="feature-card">
+          <span class="feature-tag tag-new">Recién Llegado</span>
+          <div class="feature-icon-wrapper bg-cyan-light">
+            ✨
+          </div>
+          <h3>Novedades y Arte</h3>
+          <p>Descubre lo más reciente en papelería Kawaii, agendas de diseño y material para lettering.</p>
+          
+          <ul class="feature-items-list">
+            <li>Agendas de Planeación 2026/2027</li>
+            <li>Washi Tapes y Stickers Exclusivos</li>
+            <li>Acuarelas Profesionales de Arte</li>
+            <li>Plumas Estilográficas Edición Limitada</li>
+          </ul>
+
+          <button class="btn btn-pink" onclick="addToCart('Colección Nuevos Productos')">
+            Explorar Novedades
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CDMX Physical Stores Banner -->
+  <div class="container" id="contacto">
+    <section class="cdmx-banner">
+      <div class="cdmx-banner-grid">
+        <div>
+          <h2>¿Prefieres comprar en persona?</h2>
+          <p>Visita cualquiera de nuestras sucursales físicas en la Ciudad de México. Contamos con atención personalizada, facturación inmediata y estacionamiento.</p>
+          <button class="btn btn-pink" onclick="openModal('Ubicaciones CDMX', 'Te esperamos de Lunes a Sábado de 8:00 AM a 8:00 PM en todas nuestras tiendas físicas.')">
+            Consultar Horarios y Direcciones
+          </button>
+        </div>
+
+        <div class="branches-grid">
+          <div class="branch-card" onclick="openModal('Sucursal Roma Norte', 'Dirección: Av. Insurgentes Sur 142. Teléfono: 55 1234 5678.')">
+            <h4>Sucursal Roma Norte</h4>
+            <p>Av. Insurgentes Sur 142, Cuauhtémoc</p>
+          </div>
+          <div class="branch-card" onclick="openModal('Sucursal Coyoacán', 'Dirección: Av. Hidalgo 88. Teléfono: 55 8765 4321.')">
+            <h4>Sucursal Coyoacán</h4>
+            <p>Av. Hidalgo 88, Del Carmen, Coyoacán</p>
+          </div>
+          <div class="branch-card" onclick="openModal('Sucursal Polanco', 'Dirección: Homero 402. Teléfono: 55 5555 1234.')">
+            <h4>Sucursal Polanco</h4>
+            <p>Homero 402, Polanco V Secc, Miguel Hidalgo</p>
+          </div>
+          <div class="branch-card" onclick="openModal('Sucursal Del Valle', 'Dirección: Av. Universidad 604. Teléfono: 55 4321 8765.')">
+            <h4>Sucursal Del Valle</h4>
+            <p>Av. Universidad 604, Benito Juárez</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 style="display: flex; align-items: center; gap: 8px;">
+            <span style="background: var(--accent-pink); padding: 4px 10px; border-radius: 8px; color: white; font-size: 1.2rem;">R</span>
+            RapiPapel CDMX
+          </h3>
+          <p>Tu aliado número uno para el regreso a clases, la oficina y tus proyectos creativos en toda la Ciudad de México.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="#caracteristicas">Papelería Escolar</a></li>
+            <li><a href="#caracteristicas">Suministros de Oficina</a></li>
+            <li><a href="#caracteristicas">Arte y Dibujo</a></li>
+            <li><a href="#caracteristicas">Cómputo y Tecnología</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Sucursales</h4>
+          <ul class="footer-links">
+            <li><a href="#sucursales">Roma Norte</a></li>
+            <li><a href="#sucursales">Coyoacán</a></li>
+            <li><a href="#sucursales">Polanco</a></li>
+            <li><a href="#sucursales">Del Valle</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Recibe Promociones</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 12px;">Suscríbete y obtén 10% de descuento en tu primera compra en CDMX.</p>
+          <div class="newsletter-input-group">
+            <input type="email" id="newsletter-email" placeholder="Tu correo electrónico">
+            <button class="btn btn-pink" style="padding: 10px 18px;" onclick="subscribeNewsletter()">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 RapiPapel CDMX S.A. de C.V. Todos los derechos reservados.</p>
+        <p>Diseñado para ofrecer la mejor experiencia papelera en GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Interactivo -->
+  <div class="modal" id="info-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-icon" id="modal-icon">🛍️</div>
+      <h3 id="modal-title" style="font-size: 1.5rem; margin-bottom: 12px; color: var(--primary);">Título</h3>
+      <p id="modal-message" style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Mensaje</p>
+      <button class="btn btn-pink" onclick="closeModal()">Continuar Explorando</button>
+    </div>
+  </div>
+
+  <script>
+    let cartCount = 2;
+
+    function triggerBuyNow() {
+      openModal('¡Bienvenido a RapiPapel!', 'Estás a punto de iniciar tu pedido express en CDMX. Selecciona tus productos favoritos o visita tu sucursal más cercana.');
+    }
+
+    function addToCart(item) {
+      cartCount++;
+      document.getElementById('cart-count').innerText = cartCount;
+      openModal('¡Agregado al Carrito!', `Has añadido "${item}" a tu pedido. Total actual: ${cartCount} productos.`);
+    }
+
+    function selectLocation(element, locationName) {
+      document.querySelectorAll('.location-chip').forEach(chip => chip.classList.remove('active'));
+      element.classList.add('active');
+      openModal('Sucursal Seleccionada', `Has seleccionado la sucursal de ${locationName}. Mostrando inventario disponible y entregas inmediatas en esa zona de la CDMX.`);
+    }
+
+    function subscribeNewsletter() {
+      const emailInput = document.getElementById('newsletter-email');
+      if (emailInput && emailInput.value) {
+        openModal('¡Suscripción Exitosa!', `Gracias. Hemos enviado un cupón del 10% de descuento a ${emailInput.value}.`);
+        emailInput.value = '';
+      } else {
+        openModal('Atención', 'Por favor ingresa un correo electrónico válido.');
+      }
+    }
+
+    function openModal(title, message) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-message').innerText = message;
+      document.getElementById('info-modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('info-modal').style.display = 'none';
+    }
+
+    // Modal background close
+    window.onclick = function(event) {
+      const modal = document.getElementById('info-modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+</body>
+</html>
